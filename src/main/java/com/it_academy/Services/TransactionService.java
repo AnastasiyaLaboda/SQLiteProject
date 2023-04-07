@@ -1,8 +1,6 @@
-package Services;
+package com.it_academy.Services;
 
-import Models.Transaction;
-
-import java.util.Scanner;
+import com.it_academy.Models.Transaction;
 
 public class TransactionService {
     public static Transaction createTransaction(int accountId, int amount) {

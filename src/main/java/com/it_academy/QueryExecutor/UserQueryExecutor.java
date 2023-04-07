@@ -1,6 +1,6 @@
-package QueryExecutor;
+package com.it_academy.QueryExecutor;
 
-import Models.User;
+import com.it_academy.Models.User;
 
 import java.sql.*;
 

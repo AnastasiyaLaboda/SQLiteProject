@@ -1,6 +1,6 @@
-package Services;
+package com.it_academy.Services;
 
-import Models.Account;
+import com.it_academy.Models.Account;
 
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ public class AccountService {
         return account;
     }
 
-    enum Currencies {
+    public enum Currencies {
         BYN,
         USD,
         EUR,
@@ -40,5 +40,4 @@ public class AccountService {
             return false;
         }
     }
-
 }

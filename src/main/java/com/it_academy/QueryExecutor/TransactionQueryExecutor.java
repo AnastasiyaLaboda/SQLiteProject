@@ -1,6 +1,6 @@
-package QueryExecutor;
+package com.it_academy.QueryExecutor;
 
-import Models.Transaction;
+import com.it_academy.Models.Transaction;
 
 import java.sql.*;
 
@@ -28,6 +28,7 @@ public class TransactionQueryExecutor {
             preparedStatement.execute();
         } catch (SQLException e) {
             System.out.println("Failed to insert new Transaction: " + e.getMessage());
+            //throw new SQLException("Failed to insert new Transaction: " + e.getMessage());
         }
     }
 }
