@@ -1,21 +1,21 @@
 package com.it_academy;
 
-import Services.AccountService;
-import Services.TransactionService;
-import Services.UserService;
+import com.it_academy.Services.AccountService;
+import com.it_academy.Services.TransactionService;
+import com.it_academy.Services.UserService;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import static QueryExecutor.AccountQueryExecutor.*;
-import static QueryExecutor.TransactionQueryExecutor.*;
-import static QueryExecutor.UserQueryExecutor.*;
+import static com.it_academy.QueryExecutor.AccountQueryExecutor.*;
+import static com.it_academy.QueryExecutor.TransactionQueryExecutor.*;
+import static com.it_academy.QueryExecutor.UserQueryExecutor.*;
 
 public class ApplicationDB {
-    static final String JDBC_DRIVER = "org.sqlite.JDBC";
-    static final String DATA_BASE_URL = "jdbc:sqlite:" + System.getProperty("user.dir") + "\\src\\main\\resources\\userAccountsdb.db";
+    private static final String JDBC_DRIVER = "org.sqlite.JDBC";
+    private static final String DATA_BASE_URL = "jdbc:sqlite:" + System.getProperty("user.dir") + "\\src\\main\\resources\\userAccountsdb.db";
 
 
     public static void main(String[] args) {
@@ -57,7 +57,7 @@ public class ApplicationDB {
                             break;
                     }
                 }
-                while (!action.equalsIgnoreCase("exit"));
+                while (!action.trim().equalsIgnoreCase("exit"));
             } catch (SQLException e) {
                 System.out.println("You can not establish the database connection");
             }
@@ -85,14 +85,16 @@ public class ApplicationDB {
 
     public static void printMenuToChooseOption() {
         System.out.println("\nEnter number to select an option:");
-        System.out.println("1 - View all Users" +
-                "\n2 - Register a new User" +
-                "\n3 - Delete a User" +
-                "\n4 - See all Users Accounts" +
-                "\n5 - Add a new User Account" +
-                "\n6 - See all Users Transactions" +
-                "\n7 - Increase or Reduce Account balance" +
-                "\nType 'EXIT' to quit.\n");
+        System.out.println("""
+                1 - View all Users
+                2 - Register a new User
+                3 - Delete a User
+                4 - See all Users Accounts
+                5 - Add a new User Account
+                6 - See all Users Transactions
+                7 - Increase or Reduce Account balance
+                Type 'EXIT' to quit.
+                """);
     }
 
     public static boolean isDriverExists() {

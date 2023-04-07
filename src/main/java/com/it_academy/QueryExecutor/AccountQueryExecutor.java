@@ -1,6 +1,6 @@
-package QueryExecutor;
+package com.it_academy.QueryExecutor;
 
-import Models.Account;
+import com.it_academy.Models.Account;
 
 import java.sql.*;
 
@@ -30,6 +30,7 @@ public class AccountQueryExecutor {
             preparedStatement.execute();
         } catch (SQLException e) {
             System.out.println("Failed to add new account: " + e.getMessage());
+            //throw new SQLException("Failed to add new account: " + e.getMessage());
         }
     }
 

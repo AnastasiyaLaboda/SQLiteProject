@@ -1,4 +1,4 @@
-package Models;
+package com.it_academy.Models;
 
 import java.util.Objects;
 
