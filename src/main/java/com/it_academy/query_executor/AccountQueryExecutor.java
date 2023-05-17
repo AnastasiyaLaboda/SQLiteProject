@@ -1,11 +1,11 @@
-package com.it_academy.QueryExecutor;
+package com.it_academy.query_executor;
 
-import com.it_academy.Models.Account;
+import com.it_academy.models.Account;
 
 import java.sql.*;
 
 public class AccountQueryExecutor {
-    public static void printAccountTable(Connection connection) throws SQLException {
+    public static void printAccountTable(Connection connection) {
         String selectAllAccountsQuery = "SELECT * FROM Accounts;";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(selectAllAccountsQuery)) {
@@ -21,7 +21,7 @@ public class AccountQueryExecutor {
         }
     }
 
-    public static void addNewAccount(Connection connection, Account account) throws SQLException {
+    public static void addNewAccount(Connection connection, Account account) {
         String addNewAccountQuery = "INSERT INTO Accounts (userId, balance, currency) VALUES(?,?,?);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(addNewAccountQuery);) {
             preparedStatement.setInt(1, account.getUserId());
@@ -34,7 +34,7 @@ public class AccountQueryExecutor {
         }
     }
 
-    public static boolean updateAccountBalance(Connection connection, int accountIdForUpdate, int amount) throws SQLException {
+    public static boolean updateAccountBalance(Connection connection, int accountIdForUpdate, int amount) {
         int currentBalance;
         String findCurrentAccountBalanceQuery = "SELECT balance FROM Accounts WHERE accountId=?;";
         String updateAccountBalanceQuery = "UPDATE Accounts SET balance=(balance+?) WHERE accountId=?;";

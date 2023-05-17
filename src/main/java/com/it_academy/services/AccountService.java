@@ -1,6 +1,6 @@
-package com.it_academy.Services;
+package com.it_academy.services;
 
-import com.it_academy.Models.Account;
+import com.it_academy.models.Account;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class AccountService {
         account.setBalance(Integer.parseInt(scanner.nextLine()));
         System.out.println("Account currency:");
         String currency = scanner.nextLine().toUpperCase();
-        while (!isValidCurrency(currency)) {
+        while (!isCurrencyValid(currency)) {
             System.out.println("Invalid currency input, try again.");
             currency = scanner.nextLine().toUpperCase();
         }
@@ -32,7 +32,7 @@ public class AccountService {
         CNY
     }
 
-    private static boolean isValidCurrency(String currency) {
+    private static boolean isCurrencyValid(String currency) {
         try {
             Currencies.valueOf(currency);
             return true;

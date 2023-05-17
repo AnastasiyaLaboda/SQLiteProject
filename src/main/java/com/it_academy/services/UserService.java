@@ -1,6 +1,6 @@
-package com.it_academy.Services;
+package com.it_academy.services;
 
-import com.it_academy.Models.User;
+import com.it_academy.models.User;
 
 import java.util.Scanner;
 
