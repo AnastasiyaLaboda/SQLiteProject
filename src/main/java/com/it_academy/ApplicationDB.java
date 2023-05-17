@@ -15,9 +15,7 @@ import static com.it_academy.query_executor.TransactionQueryExecutor.*;
 import static com.it_academy.query_executor.UserQueryExecutor.*;
 
 public class ApplicationDB {
-
     private static final String DATA_BASE_URL = "jdbc:sqlite:" + System.getProperty("user.dir") + "\\src\\main\\resources\\userAccountsdb.db";
-
 
     public static void main(String[] args) {
 
@@ -82,7 +80,6 @@ public class ApplicationDB {
         Scanner scanner = new Scanner(System.in);
         return Integer.parseInt(scanner.nextLine());
     }
-
 
     public static void printMenuToChooseOption() {
         System.out.println("\nEnter number to select an option:");
