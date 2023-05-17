@@ -1,20 +1,21 @@
 package com.it_academy;
 
-import com.it_academy.Services.AccountService;
-import com.it_academy.Services.TransactionService;
-import com.it_academy.Services.UserService;
+import com.it_academy.services.AccountService;
+import com.it_academy.services.TransactionService;
+import com.it_academy.services.UserService;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import static com.it_academy.QueryExecutor.AccountQueryExecutor.*;
-import static com.it_academy.QueryExecutor.TransactionQueryExecutor.*;
-import static com.it_academy.QueryExecutor.UserQueryExecutor.*;
+import static com.it_academy.DBDriverManager.isDriverExists;
+import static com.it_academy.query_executor.AccountQueryExecutor.*;
+import static com.it_academy.query_executor.TransactionQueryExecutor.*;
+import static com.it_academy.query_executor.UserQueryExecutor.*;
 
 public class ApplicationDB {
-    private static final String JDBC_DRIVER = "org.sqlite.JDBC";
+
     private static final String DATA_BASE_URL = "jdbc:sqlite:" + System.getProperty("user.dir") + "\\src\\main\\resources\\userAccountsdb.db";
 
 
@@ -96,15 +97,4 @@ public class ApplicationDB {
                 Type 'EXIT' to quit.
                 """);
     }
-
-    public static boolean isDriverExists() {
-        try {
-            Class.forName(JDBC_DRIVER);
-            return true;
-        } catch (ClassNotFoundException e) {
-            System.out.println("JDBC Driver was not found");
-            return false;
-        }
-    }
-
 }

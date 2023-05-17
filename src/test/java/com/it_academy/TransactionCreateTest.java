@@ -1,6 +1,6 @@
 package com.it_academy;
 
-import com.it_academy.Models.Transaction;
+import com.it_academy.models.Transaction;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 

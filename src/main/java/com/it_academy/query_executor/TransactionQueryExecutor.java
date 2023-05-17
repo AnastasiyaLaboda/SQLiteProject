@@ -1,11 +1,11 @@
-package com.it_academy.QueryExecutor;
+package com.it_academy.query_executor;
 
-import com.it_academy.Models.Transaction;
+import com.it_academy.models.Transaction;
 
 import java.sql.*;
 
 public class TransactionQueryExecutor {
-    public static void printTransactionTable(Connection connection) throws SQLException {
+    public static void printTransactionTable(Connection connection) {
         String selectAllTransactionsQuery = "SELECT * FROM Transactions;";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(selectAllTransactionsQuery)) {
@@ -20,7 +20,7 @@ public class TransactionQueryExecutor {
         }
     }
 
-    public static void insertNewTransaction(Connection connection, int amount, Transaction transaction) throws SQLException {
+    public static void insertNewTransaction(Connection connection, int amount, Transaction transaction) {
         String insertTransactionQuery = "INSERT INTO Transactions(accountId, amount) VALUES(?,?);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(insertTransactionQuery);) {
             preparedStatement.setInt(1, transaction.getAccountId());

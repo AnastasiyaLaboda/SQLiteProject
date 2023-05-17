@@ -1,7 +1,7 @@
 package com.it_academy;
 
-import com.it_academy.Models.Account;
-import com.it_academy.Services.AccountService.Currencies;
+import com.it_academy.models.Account;
+import com.it_academy.services.AccountService.Currencies;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static com.it_academy.QueryExecutor.AccountQueryExecutor.addNewAccount;
+import static com.it_academy.query_executor.AccountQueryExecutor.addNewAccount;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AccountCurrencyTest {
